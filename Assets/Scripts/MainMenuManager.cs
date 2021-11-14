@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
@@ -24,9 +25,14 @@ public class MainMenuManager : MonoBehaviour
         Application.Quit(0);
     }
 
-    public void OnMinigamesPressed()
+    public void OnGamesPressed()
     {
         EnableGamesMenu();
+    }
+
+    public void OnMinigamesPressed()
+    {
+        SceneManager.LoadScene("MinigamesMenu");
     }
 
     public void OnHorseRacingPressed()

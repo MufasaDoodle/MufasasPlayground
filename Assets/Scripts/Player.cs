@@ -5,6 +5,21 @@ using Unity.Netcode;
 
 public class Player : NetworkBehaviour
 {
+    /// <summary>
+    /// Represents a single player on the game server
+    /// </summary>
+    public struct PlayerData
+    {
+        public string playerName;  //name of the player
+        public ulong clientID; //the identifying id of the client
+
+        public PlayerData(string playerName, ulong clientId)
+        {
+            this.playerName = playerName;
+            clientID = clientId;
+        }
+    }
+
     public NetworkVariable<Vector3> Position = new NetworkVariable<Vector3>();
 
     public override void OnNetworkSpawn()
